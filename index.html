@@ -1,33 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		.valgt {
+			background-color: teal;
+		}
+		.alt {
+			background-color: hotpink;
+			width: 15ch;
+			border-radius: 50%;
+			text-align: center;
+			padding: 12px 3px;
+			margin: 8px;
+		}
+	</style>
 </head>
+
 <body>
-    <div id="app"></div>
+	<div id="app"></div>
 
-    <script>
+	<script>
+		/*
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem
+		augue, sollicitudin scelerisque rutrum ut, porttitor ut magna. Vivamus
+		lobortis tincidunt eros, volutpat placerat enim laoreet id. Nunc luctus
+		ante ut facilisis faucibus. Duis non mauris nec nibh condimentum
+		condimentum. Cras elementum lacus in nibh posuere hendrerit. Aliquam at
+		libero nunc. Mauris auctor aliquam leo, a porta quam lacinia malesuada.
+		*/
 
-        // model
+		// model
+		const tomtOrd = "_____";
 
-        // view
-        updateView();
-        function updateView() {
-            document.getElementById=`
+		var ord1 = tomtOrd;
+		var ord2 = tomtOrd;
+		var ord3 = tomtOrd;
+		var ord4 = tomtOrd;
+		
+		var svar1 = "Geir :3";
+		var svar2 = "Alexander XD";
+		var svar3 = "Elisabeth :D";
+		var svar4 = "Marcus :-)";
+
+		const classSvarDefault = "alt";
+
+		var classSvar1 = classSvarDefault;
+		var classSvar2 = classSvarDefault;
+		var classSvar3 = classSvarDefault;
+		var classSvar4 = classSvarDefault;
+
+		// view
+		updateView();
+		function updateView() {
+			document.getElementById("app").innerHTML = `
             
-            
-            
-            
-            `;
-        }
-    
+							Lorem ipsum ${ord1} sit amet, consectetur adipiscing ${ord2}. Morbi lorem augue, sollicitudin scelerisque ${ord3} ut, porttitor ut ${ord4}.
 
-        // controller
+							<div class="${classSvar1}" onclick="clickWord(this)">${svar1}</div>
+							<div class="${classSvar2}" onclick="clickWord(this)">${svar2}</div>
+							<div class="${classSvar3}" onclick="clickWord(this)">${svar3}</div>
+							<div class="${classSvar4}" onclick="clickWord(this)">${svar4}</div>
+						`;
+		}
 
 
-    </script>
+    // controller
+		function clickWord(element) {
+			if(ord1 == tomtOrd){
+				ord1 = element.innerHTML;
+			}
+			else if(ord2 == tomtOrd) {
+				ord2 = element.innerHTML;
+			}
+			else if(ord3 == tomtOrd) {
+				ord3 = element.innerHTML;
+			}
+			else if(ord4 == tomtOrd) {
+				ord4 = element.innerHTML;
+			}
+			else {
+				alert('alle ord har blitt brukt!');
+			}
+
+			if(element.innerHTML == svar1){
+				svar1 = "";
+				classSvar1 = "";
+			}
+			else if(element.innerHTML == svar2){
+				svar2 = "";
+				classSvar2 = "";
+			}
+			else if(element.innerHTML == svar3){
+				svar3 = "";
+				classSvar3 = "";
+			}
+			else if(element.innerHTML == svar4){
+				svar4 = "";
+				classSvar4 = "";
+			}
+			updateView();
+		}
+
+	</script>
 </body>
+
 </html>
